@@ -3,5 +3,10 @@ jobs:
   env:
     runs-on: ubuntu-latest
     steps:
-      - run: pipx install hatch
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+      - run: |
+          pip install pipx
+          pipx install hatch
       - run: hatch --version
