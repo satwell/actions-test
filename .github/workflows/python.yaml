@@ -1,0 +1,19 @@
+name: Python test
+
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+      - name: install stuff
+        run: |
+          echo $PATH
+          which pipx
+          pipx install hatch
+      - name: run hatch
+        run: which hatch
