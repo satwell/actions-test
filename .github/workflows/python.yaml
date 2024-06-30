@@ -16,4 +16,6 @@ jobs:
           which pipx
           pipx install hatch
       - name: run hatch
-        run: which hatch
+        run: |
+          which hatch
+          hatch --version
