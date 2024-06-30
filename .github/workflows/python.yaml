@@ -3,4 +3,5 @@ jobs:
   env:
     runs-on: ubuntu-latest
     steps:
-      - run: echo $PATH
+      - run: pipx install hatch
+      - run: hatch --version
