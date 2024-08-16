@@ -3,10 +3,15 @@ jobs:
   env:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-python@v4
+      - uses: actions/setup-python@v5
+        id: py
         with:
           python-version: 3.11
       - run: |
-          pip install pipx
+          ls $(dirname "${{ steps.py.outputs.python-path }}")
+      - run: |
+          python -m pip install pipx
           pipx install hatch
+      - run: |
+          ls $(dirname "${{ steps.py.outputs.python-path }}")          
       - run: hatch --version
