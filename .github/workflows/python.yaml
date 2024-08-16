@@ -2,11 +2,13 @@ on: push
 jobs:
   env:
     runs-on: ubuntu-latest
+    
     steps:
+      - run: ls /opt/hostedtoolcache/Python
       - uses: actions/setup-python@v5
         id: py
         with:
-          python-version: 3.11
+          python-version: 3.11.3
       - run: ls /opt/hostedtoolcache/Python
       - run: |
           ls $(dirname "${{ steps.py.outputs.python-path }}")
