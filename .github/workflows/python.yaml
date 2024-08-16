@@ -7,6 +7,7 @@ jobs:
         id: py
         with:
           python-version: 3.11
+      - run: ls /opt/hostedtoolcache
       - run: |
           ls $(dirname "${{ steps.py.outputs.python-path }}")
       - run: |
